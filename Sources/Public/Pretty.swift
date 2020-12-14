@@ -18,7 +18,7 @@ public class Pretty {
 }
 
 // MARK: Standard API
-
+/Users/charleyluckhardt/Dev/SwiftPrettyPrint/Sources/Public/CombineExtension.swift
 extension Pretty {
     /// Output `targets` to console.
     /// - Parameters:
@@ -144,6 +144,15 @@ extension Pretty {
         to output: inout Target
     ) {
         Swift.print(_prettyPrintDebug(label: label, targets, separator: separator, option: option), to: &output)
+    }
+
+    public static func prettyString(
+        label: String? = nil,
+        _ targets: Any...,
+        separator: String = "\n",
+        option: Option = Pretty.sharedOption
+    ) -> String {
+        return _prettyPrint(label: label, targets, separator: separator, option: option)
     }
 
     // MARK: - private
